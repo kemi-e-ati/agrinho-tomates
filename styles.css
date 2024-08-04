@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3) url('background-image.jpg') no-repeat center center; /* Aumenta a transparência do fundo */
+  background-size: 1000px 700px; /* Define o tamanho máximo da imagem de fundo */
+  z-index: -1; /* Coloca a imagem de fundo atrás do contêiner */
+}
+
+.container {
+  position: relative;
+  width: 100vw; /* Largura responsiva */
+  height: 100vh; /* Altura responsiva */
+  max-width: 1000px; /* Tamanho máximo */
+  max-height: 700px; /* Tamanho máximo */
+  border-radius: 20px; /* Borda arredondada para o contêiner */
+  overflow: hidden;
+}
+
+.anchor {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 50%; /* Borda circular para os ícones */
+  padding: 10px;
+}
+
+.anchor img {
+  width: 10vw; /* Largura responsiva */
+  height: auto; /* Manter proporções */
+  border: 5px solid black; /* Adiciona borda preta ao redor das imagens */
+  border-radius: 50%; /* Borda circular ao redor das imagens */
+  cursor: pointer; /* Adiciona o cursor de ponteiro para indicar que é clicável */
+}
+
+.anchor p {
+  margin: 0;
+  font-size: 1.2em;
+  border: 3px solid black; /* Adiciona uma borda preta */
+  background-color: rgba(255, 255, 255, 0.8); /* Adiciona um fundo branco com transparência */    
+  padding: 2px 5px; /* Adiciona um espaçamento interno */
+  border-radius: 5px; /* Arredonda as bordas */
+}
+
+.info {
+  display: none;
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  width: 200px;
+  text-align: center;
+  z-index: 1;
+  border-radius: 10px; /* Borda arredondada para informações */
+}
+
+.anchor label {
+  cursor: pointer; /* Adiciona o cursor de ponteiro para o label */
+}
+
+.anchor label:hover + .info {
+  display: block; /* Exibe a informação ao passar o mouse sobre o label */
+}
+
+.anchor:hover .info {
+  display: block; /* Exibe a informação ao passar o mouse sobre o contêiner do ícone */
+}
+
+/* Posicionamento dos contêineres e linhas */
+#campo {
+  top: 47%;
+  left: 5%;
+}
+
+#feira {
+  top: 8%;
+  left: 46%;
+}
+
+#mercado {
+  top: 40%;
+  left: 64%;
+}
+
+#casa {
+  top: 55%;
+  left: 96%; /* Ajusta a posição do último elemento para garantir que ele apareça completamente */
+  transform: translateX(-100%); /* Move o elemento para a esquerda para aparecer completamente */
+}
+
+/* Estilos para telas menores que 768px */
+@media (max-width: 768px) {
+  .anchor img {
+    width: 15vw;
+  }
+  .anchor p {
+    font-size: 1em;
+  }
+  #campo {
+    top: 40%;
+    left: 10%;
+  }
+  #feira {
+    top: 20%;
+    left: 40%;
+  }
+  #mercado {
+    top: 30%;
+    left: 60%;
+  }
+  #casa {
+    top: 45%;
+    left: 90%;
+  }
+}
+
+/* Estilos para telas menores que 480px */
+@media (max-width: 480px) {
+  .anchor img {
+    width: 20vw;
+  }
+  .anchor p {
+    font-size: 0.8em;
+ 
